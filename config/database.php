@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'prod'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,6 +45,31 @@ return [
     */
 
     'connections' => [
+        // This is the default the app is going to use for insert, delete, update, select
+        'application' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_DATABASE', 'homestead'),
+            'username'  => env('DB_APPLICATION_USERNAME', 'homestead'),
+            'password'  => env('DB_APPLICATION_PASSWORD', 'secret'),
+            'charset'   => env('DB_CHARSET', 'utf8'),
+            'collation' => env('DB_COLLATION', 'utf8_danish_ci'),
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+
+        // This is meant to be used only when migrations need to be executed
+        'migration' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_DATABASE', 'homestead'),
+            'username'  => env('DB_MIGRATION_USERNAME', 'homestead'),
+            'password'  => env('DB_MIGRATION_PASSWORD', 'secret'),
+            'charset'   => env('DB_CHARSET', 'utf8'),
+            'collation' => env('DB_COLLATION', 'utf8_danish_ci'),
+            'prefix'    => '',
+            'strict'    => false,
+        ],
 
         'sqlite' => [
             'driver'   => 'sqlite',
@@ -55,9 +80,9 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+            'database'  => env('DB_DATABASE', 'homestead'),
+            'username'  => env('DB_USERNAME', 'homestead'),
+            'password'  => env('DB_PASSWORD', 'secret'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

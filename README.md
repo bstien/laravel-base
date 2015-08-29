@@ -11,11 +11,11 @@
 # Clone the repo
 git clone https://github.com/bstien/laravel-base [project name]
 
-# Change DB-settings in .env
-vim .env
-
 # Pull inn composer-packages
 composer install
+
+# Change DB-settings in .env
+vim .env
 
 # Change the app-key
 php artisan key:generate

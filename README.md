@@ -60,3 +60,15 @@ If `DB_CONNECTION` is set to `application`, migrations may not be able to run, s
 ```bash
 php artisan migrate --database=migration
 ```
+
+## Useful commands
+**PS!** I've aliased the command `php artisan` into the simple `art`.  
+Place this line in `~/.bashrc`:  
+`alias art='php artisan'`
+
+#### Migrations
+```bash
+# Rollback migration, migrate and seed DB.
+# Remove --database if DB_CONNECTION is set to migration.
+art migrate:refresh --database=migration && art db:seed 
+```

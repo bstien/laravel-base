@@ -12,7 +12,7 @@
 git clone https://github.com/bstien/laravel-base [project name]
 
 # Pull inn composer-packages
-composer Installation
+composer install
 
 # Change the app-key
 php artisan key:generate

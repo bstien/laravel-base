@@ -72,3 +72,10 @@ Place this line in `~/.bashrc`:
 # Remove --database if DB_CONNECTION is set to migration.
 art migrate:refresh --database=migration && art db:seed 
 ```
+
+#### Generate metadata
+```bash
+# Generate metadata with ide-helper
+# The last '-N' writes models to a separate file without overwriting the models themselves.
+art ide-helper:generate && art ide-helper:meta && art ide-helper:models -N
+```
